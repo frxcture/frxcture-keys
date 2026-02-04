@@ -1,0 +1,3 @@
+FRX-1234|basic
+FRX-9999|premium
+FRX-LIFE|lifetime
