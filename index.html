@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frxcture Key Generator</title>
+<style>
+body { 
+    font-family: Arial, sans-serif; 
+    background: #121212; 
+    color: #00ffcc; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    height:100vh; 
+    flex-direction:column; 
+}
+button { 
+    padding: 10px 20px; 
+    margin-top:20px; 
+    background:#00ffcc; 
+    border:none; 
+    cursor:pointer; 
+    font-weight:bold; 
+    color:#000; 
+    border-radius:5px;
+}
+input { 
+    padding: 10px; 
+    text-align:center; 
+    font-weight:bold; 
+    font-size:18px; 
+    width:250px; 
+    border-radius:5px; 
+    border:none; 
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Frxcture Key Generator</h1>
+<input id="key" readonly />
+<button onclick="generateKey()">Generate Key</button>
+
+<script>
+function generateKey() {
+    // Example key format: FRX-XXXX
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let code = "FRX-";
+    for(let i=0;i<4;i++){
+        code += chars.charAt(Math.floor(Math.random()*chars.length));
+    }
+    document.getElementById("key").value = code;
+    navigator.clipboard.writeText(code); // auto copy to clipboard
+    alert("✅ Key copied to clipboard!");
+}
+</script>
+
+</body>
+</html>
